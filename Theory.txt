@@ -1,0 +1,20 @@
+array.join() -> 
+✔ .join() converts an array to a string
+✔ Default separator is ,
+✔ You can specify any separator (-, |, , :)
+
+Optional Chaining ->
+The optional chaining (?.) operator allows you to safely access deeply nested object properties without causing an error if a property is undefined or null.
+🔹 Without ?., accessing a missing property throws an error.
+🔹 With ?., JavaScript returns undefined instead of breaking the code.
+
+array.map() ->
+The .map() method is used to loop through an array and create a new array by applying a function to each element.
+✅ .map() creates a new array
+✅ Does not modify the original array
+✅ Commonly used for transforming data
+✅ Very useful in React for rendering lists
+
+array.filter() ->
+The array.filter() method in JavaScript is used to create a new array with all elements that pass a test (provided by a function). It does not modify the original array
+
