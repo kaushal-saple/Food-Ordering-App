@@ -55,5 +55,34 @@
 }
 
 .filter-btn{
-    margin-top: 15px;
+    margin:10px;
+}
+
+.features{
+    display: flex;  
+}
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    margin:20px;
+}
+
+.shimmer{
+    border: 1px solid black;
+    width: 180px;
+    border-radius: 8px;
+    background-color: rgba(232, 228, 228, 0.842);
+    margin-top: 10px; 
+    height:280px;
+    padding:10px;
+}
+
+.shimmer-sec{
+    width: 180px;
+    height: 120px;
+    border-radius: 10px;
+    background-color: rgb(242, 245, 247);
+    
 }

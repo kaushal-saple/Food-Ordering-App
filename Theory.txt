@@ -18,3 +18,11 @@ The .map() method is used to loop through an array and create a new array by app
 array.filter() ->
 The array.filter() method in JavaScript is used to create a new array with all elements that pass a test (provided by a function). It does not modify the original array
 
+React Hooks - THese are normal utulity function, they are super powerful  pre-define function when use inside react
+
+UseState() -> This hook is use to create a state variable, which maintains the state of a variable. 
+It is used to keep data layer in sync with the UI layer, as soon as data layer changes/update, it quickly and efficient re-renders the component
+
+.includes() method is to check if a string or array contains speicifc value and returns true or false
+
+UseEffect() - React hook. The useEffect hook in React is used to handle side effects in functional components. Side effects are operations that interact with the outside world. it's usually to get data from an API when a component loads
