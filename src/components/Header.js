@@ -1,5 +1,6 @@
 import { LOGO_URL} from "../Utils/constant"
-import {useState} from "react"
+import { useState} from "react"
+import { Link } from "react-router-dom"
 
 
 const Header = ()=>{
@@ -9,12 +10,15 @@ const Header = ()=>{
     return (
     <div className="header">
         <img className="logo" alt="logo-image" src={LOGO_URL}/>
-
+        {console.log("header component render")}
         <div className="nav-list">
             <ul>
-                <li>Home</li>
-                <li>About us</li>
-                <li>Cart</li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/aboutus">About us</Link></li>
+                <li><Link to="/contact">About us</Link></li>
+                
+              
+                
                 <li>
                     <div className="btn">
                         <button onClick={()=>{

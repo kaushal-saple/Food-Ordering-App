@@ -26,3 +26,13 @@ It is used to keep data layer in sync with the UI layer, as soon as data layer c
 .includes() method is to check if a string or array contains speicifc value and returns true or false
 
 UseEffect() - React hook. The useEffect hook in React is used to handle side effects in functional components. Side effects are operations that interact with the outside world. it's usually to get data from an API when a component loads
+
+react-router-dom => it is a library used in react to manage the routing o navigation in a SPA without reloading the page
+
+➡️ Why do we need <Link> instead of <a>?
+In React, using <a href="/about">About</a> refreshes the entire page, which is inefficient.
+<Link to="/about">About</Link> changes the URL without refreshing the page, making navigation faster and smoother.
+
+A Single Page Application (SPA) in React is a web application that loads a single HTML page and dynamically updates the content without refreshing the page.
+useRouteError() and useParam() hook 
+
