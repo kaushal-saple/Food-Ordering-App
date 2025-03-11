@@ -36,3 +36,10 @@ In React, using <a href="/about">About</a> refreshes the entire page, which is i
 A Single Page Application (SPA) in React is a web application that loads a single HTML page and dynamically updates the content without refreshing the page.
 useRouteError() and useParam() hook 
 
+Single Responsibility Principle - It means that each compoznent should do only one task or it should do only one thing and do it well
+By following SRP, your React code will be more modular, easier to test, and scalable, redable
+
+custom hooks - "A Custom Hook in React is a reusable function that extracts logic from components to make them cleaner and more efficient.
+Lazy loading concept
+code splitting/chunking/on-demand loading/dynamic loading
+suspense and fallout
