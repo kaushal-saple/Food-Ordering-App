@@ -7,7 +7,7 @@ import useOnline from "../Utils/UseOnline";
 
 const Body = () =>{
     const [listOfRestaurant,setListOfRestaurants] = useState([]);
-    const [searchRestaurant,setSearchRestaurnat] = useState([])
+    const [searchRestaurant,setSearchRestaurnat] = useState([]);
     const [searchText,setSearchText] = useState("");
 
     useEffect(()=>{
@@ -26,19 +26,20 @@ const Body = () =>{
     if(onlineStatus===false){
         return <h1>Oops!! Looks like you are offline!!!</h1>
     }
+
     // conditional rendering
     return listOfRestaurant.length===0?(<Shimmer/>):
     (
-    <div className="body">
+    <div className="mx-1">
         
-        <div className="features">
+        <div className="flex my-3  p-3 space-x-3 items-center">
 
-            <div className="search">
-                <input type="text" value={searchText} onChange={(e)=>{
+            <div className="search space-x-2">
+                <input className="p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search here..." type="text" value={searchText} onChange={(e)=>{
                     setSearchText(e.target.value);
                 }}></input>
                 
-                <button onClick={()=>{
+                <button className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2" onClick={()=>{
                    //filter
                    const filterListOfRes = listOfRestaurant.filter((ele)=>ele.info.name.toLowerCase().includes(searchText.toLowerCase()));
                    setSearchRestaurnat(filterListOfRes)
@@ -46,7 +47,7 @@ const Body = () =>{
             </div>
 
             <div className="filter-btn">
-                <button className="btn"
+                <button className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2"
                 onClick={()=>{
                     const filterRes = listOfRestaurant.filter((restaurant)=>{
                         return restaurant?.info?.avgRating>4.3;
@@ -57,12 +58,15 @@ const Body = () =>{
             </div>
         </div>
 
-        <div className="restaurants-container">
-           {searchRestaurant.map(restaurant =>(
+        <div className="flex flex-wrap bg-slate-100 mx-3 rounded-md">
+            {listOfRestaurant!==0 && searchRestaurant.length==0?
+            (<h2 className="text-center w-full  text-red-500 text-lg p-4" >No result found</h2>):
+            searchRestaurant.map(restaurant =>(
             <Link to={"/restaurant/" + restaurant.info.id}  key={restaurant.info.id} ><RestaurantCard resInfo={restaurant}/></Link>
            ))
            }
         
+           
         </div>
     </div>
 )}

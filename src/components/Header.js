@@ -11,23 +11,23 @@ const Header = ()=>{
     
 
     return (
-    <div className="header">
-        <img className="logo" alt="logo-image" src={LOGO_URL}/>
+    <div className="flex m-3 p-3 justify-between border rounded-md bg-slate-100 shadow-lg">
+        <img className="w-32 h-20 rounded-md" alt="logo-image" src={LOGO_URL}/>
         
-        <div className="nav-list">
+        <div className="flex items-center text-lg font-semibold">
             <div>OnlineStatus: {isOnline?"🟢":"🔴"}</div>
-            <ul>
+            <ul className="flex items-center">
                 {/* <li>Online Status</li> */}
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/aboutus">About us</Link></li>
-                <li><Link to="/contact">Contact us</Link></li>
-                <li><Link to="/daily-mart">Daily Mart</Link></li>
+                <li className="mx-2 px-2 text-lg hover:text-blue-800"><Link to="/">Home</Link></li>
+                <li className="mx-2 px-2 text-lg  hover:text-blue-800"><Link to="/aboutus">About us</Link></li>
+                <li className="mx-2 px-3 text-lg  hover:text-blue-800"><Link to="/contact">Contact us</Link></li>
+                <li className="mx-2 px-2 text-lg  hover:text-blue-800"><Link to="/daily-mart">Daily Mart</Link></li>
                 
               
                 
                 <li>
-                    <div className="btn">
-                        <button onClick={()=>{
+                    <div>
+                        <button className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2" onClick={()=>{
                             reactBtn==="Login"?
                             setReactBtn("Log-out"):
                             setReactBtn("Login");
