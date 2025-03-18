@@ -1,5 +1,11 @@
 import { CDN_URL } from "../Utils/constant"
+import userContext from "../Utils/userContext";
+import React, { useContext } from "react";
+
+
 const RestaurantCard = ({resInfo})=>{
+    const {loggedInUser} = useContext(userContext)
+
     const {
         name,
         locality,
@@ -16,7 +22,32 @@ const RestaurantCard = ({resInfo})=>{
             {cuisines.join(", ")}
             </p>
             <p className="text-sm font-medium">{avgRating} Stars</p>
+            <p>
+                {loggedInUser}
+            </p>
+        
+
+
       </div>)
+}
+
+//Higher Order Component function
+
+{/* 
+    input - component
+    output- enhanced componnent
+    */}
+
+export const isOpenComp = (RestaurantCard)=>{
+    return (props)=>{
+        return (
+            <div className="relative">
+                <label className="absolute bg-opacity-70 text-white bg-black rounded m-1 p-1">Open Now</label>
+                <RestaurantCard {...props}/>
+            </div>
+        )
+    } 
+            
 }
 
 export default RestaurantCard;

@@ -1,4 +1,4 @@
-import React,{lazy, Suspense}from "react"
+import React,{lazy, Suspense,useEffect, useState}from "react"
 import ReactDOM from "react-dom/client"
 import Header from "./components/Header"
 import Body from "./components/Body"
@@ -7,18 +7,40 @@ import ContactUs from "./components/ContactUs"
 import Aboutus from "./components/Aboutus"
 import Error from "./components/Error"
 import RestaurantInfo from "./components/RestaurantInfo"
+import userContext from "./Utils/userContext"
+
 
 
 
 const DailyMart = lazy(()=>import("./components/DailyMart"));
 
 
-const AppLayout = ()=>(
-    <div className="app-layout">
-        <Header/>
-        <Outlet/>
-    </div>
-)
+const AppLayout = ()=>{
+    const [userName,setUserName] = useState("");
+
+
+    useEffect(()=>
+            //we fetch some data by making an API call
+            getUserData() 
+        ,
+        [])
+
+    function getUserData(){
+        //we fetch some data by making an API call
+        const data = "Kaushal Saple"
+        setUserName(data)
+    }
+
+    return (
+        <userContext.Provider value={{loggedInUser:userName,setUserName}}>
+            <div className="app-layout overflow-y-scroll h-screen [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth ">
+                <Header/>
+                <Outlet/>
+            </div>
+        </userContext.Provider>
+    )
+    
+}
 
 const appRoute = createBrowserRouter([
     {

@@ -43,3 +43,10 @@ custom hooks - "A Custom Hook in React is a reusable function that extracts logi
 Lazy loading concept
 code splitting/chunking/on-demand loading/dynamic loading
 suspense and fallout
+
+High order component
+Building the Accordian
+Uplifting State
+Prop Drilling
+Context 
+useContext

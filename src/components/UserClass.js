@@ -4,7 +4,6 @@ class UserClass extends React.Component{
     constructor(props){
         
         super(props);
-        console.log("child constructor")
 
         this.state={
             count:0,
@@ -20,7 +19,6 @@ class UserClass extends React.Component{
        
         const data = await fetch("https://api.github.com/users/akshaymarch7");
         const json = await data.json();
-        console.log("child Component did mount")
         
 
         this.setState({
@@ -35,7 +33,7 @@ class UserClass extends React.Component{
         const{count} = this.state
         // console.log(this.state.dataInfo)
         const{name,location,followers} = this.state.dataInfo;
-        console.log("child render")
+       
         return(
             <div>
             <h3>Name :{name}</h3>
