@@ -50,3 +50,12 @@ Uplifting State
 Prop Drilling
 Context 
 useContext
+
+
+
+REDUX :)
+#Redux Toolkit
+Installing redux and RTK
+Create a redux store
+provide store to our application
+create slice

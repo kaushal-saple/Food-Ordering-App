@@ -8,6 +8,9 @@ import Aboutus from "./components/Aboutus"
 import Error from "./components/Error"
 import RestaurantInfo from "./components/RestaurantInfo"
 import userContext from "./Utils/userContext"
+import { Provider } from "react-redux"
+import appStore from "./Utils/appStore"
+import CartItems from "./components/CartItems"
 
 
 
@@ -24,20 +27,21 @@ const AppLayout = ()=>{
             getUserData() 
         ,
         [])
-
     function getUserData(){
         //we fetch some data by making an API call
         const data = "Kaushal Saple"
         setUserName(data)
     }
-
     return (
-        <userContext.Provider value={{loggedInUser:userName,setUserName}}>
-            <div className="app-layout overflow-y-scroll h-screen [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth ">
-                <Header/>
-                <Outlet/>
-            </div>
-        </userContext.Provider>
+
+        <Provider store={appStore}>
+            <userContext.Provider value={{loggedInUser:userName,setUserName}}>
+                <div className="app-layout overflow-y-scroll h-screen [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth ">
+                    <Header/>
+                    <Outlet/>
+                </div>
+            </userContext.Provider>
+        </Provider>
     )
     
 }
@@ -67,6 +71,9 @@ const appRoute = createBrowserRouter([
             {
                 path:"/daily-mart",
                 element:<Suspense fallback={<h2>Content is LOading........</h2>}><DailyMart/></Suspense>
+            },{
+                path:"/cart",
+                element:<CartItems/>
             }
         ],
         errorElement:<Error/>

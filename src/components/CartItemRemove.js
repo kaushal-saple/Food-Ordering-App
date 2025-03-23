@@ -1,14 +1,14 @@
 // import { CDN_URL } from "../Utils/constant";
 import { useDispatch } from "react-redux";
-import { AddItems } from "../Utils/cartSlice";
+import { RemoveItems } from "../Utils/cartSlice";
 
 
 
-const RestaurantCategoryDes = ({data})=>{
+const CartItemRemove = ({data,index})=>{
     const dispatch = useDispatch();
 
-    function handleAddItem(){
-        dispatch(AddItems(data));
+    function handleRemoveItem(){
+        dispatch(RemoveItems(index));
     }
 
     return(
@@ -30,8 +30,8 @@ const RestaurantCategoryDes = ({data})=>{
 
             <div className="flex items-center">
                 <button className=" text-white bg-black hover:scale-110 font-medium rounded-lg text-sm px-4 py-2" 
-                onClick={(data)=>handleAddItem(data)}
-                >Add</button>
+                onClick={(data)=>handleRemoveItem(data)}
+                >Remove</button>
             </div>
 
 
@@ -39,4 +39,4 @@ const RestaurantCategoryDes = ({data})=>{
     )
 }
 
-export default RestaurantCategoryDes;
+export default CartItemRemove;
